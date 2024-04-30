@@ -1,7 +1,20 @@
-import AuthForm from "../components/auth/AuthForm";
+import { Container } from "react-bootstrap";
+import styles from './HomePage.module.css';
 
-const AuthPage = () => {
-  return <AuthForm />;
+const HomePage = () => {
+  
+  return (
+    <>
+      <div className={styles.homePageContainer}>
+        <Container>
+          <div className={styles.welcomeMessage}>
+            <p>Welcome to Expense Tracker!!!</p>
+          </div>
+        </Container>
+      </div>
+      
+    </>
+  );
 };
 
-export default AuthPage;
+export default HomePage;

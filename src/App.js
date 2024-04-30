@@ -1,16 +1,20 @@
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import { useSelector } from 'react-redux';
-import AuthPage from './pages/HomePage';
+import { Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
+import AuthPage from "./pages/AuthPage";
+import HomePage from "./pages/HomePage";
+import Layout from "./components/Layout/Layout";
 
 function App() {
-  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
-   
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+
   return (
-    <Routes>
-      {!isLoggedIn && <Route path="/" element={<AuthPage />} exact />}
-    </Routes>
-  )
+    <Layout>
+      <Routes>
+        {!isLoggedIn && <Route path="/" element={<AuthPage />} exact />}
+        {isLoggedIn && <Route path="/" element={<HomePage />} exact />}
+      </Routes>
+    </Layout>
+  );
 }
 
 export default App;
