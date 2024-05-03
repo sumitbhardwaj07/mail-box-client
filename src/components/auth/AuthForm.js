@@ -71,7 +71,7 @@ const AuthForm = () => {
   
       const data = await response.json();
       alert("Login successful");
-      dispatch(login({ token: data.idToken, userId: data.localId }));
+      dispatch(login({ token: data.idToken, userId: data.localId, email: data.email }));
     } catch (error) {
       alert(error.message);
     }

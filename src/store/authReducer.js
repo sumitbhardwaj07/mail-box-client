@@ -7,11 +7,11 @@ const initialAuthState = localStorage.getItem("authState")
       userId: null,
       isLoggedIn: false,
       showForgotPasswordModal: false,
-      userData: {
-        name: '',
-        email: '',
-        photoUrl: '',
-      },
+      // userData: {
+      //   name: '',
+      //   email: '',
+      //   photoUrl: '',
+      // },
     };
 
 const authSlice = createSlice({
@@ -21,6 +21,7 @@ const authSlice = createSlice({
     login(state, action) {
       state.token = action.payload.token;
       state.userId = action.payload.userId;
+      state.email = action.payload.email;
       state.isLoggedIn = true;
       localStorage.setItem("authState", JSON.stringify(state));
     },
@@ -37,12 +38,12 @@ const authSlice = createSlice({
     hideForgotPassword(state) {
       state.showForgotPasswordModal = false;
     },
-    fetchUserData(state, action) {
-      state.userData = action.payload;
-    }
+    // fetchUserData(state, action) {
+    //   state.userData = action.payload;
+    // }
   },
 });
 
-export const { login, logout, showForgotPassword, hideForgotPassword, fetchUserData } =
+export const { login, logout, showForgotPassword, hideForgotPassword, } =
   authSlice.actions;
 export default authSlice.reducer;
