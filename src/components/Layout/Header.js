@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../store/authReducer";
-import classes from "./MainNavigation.module.css";
+import classes from "./Header.module.css";
 //import VerifyEmailButton from "../Auth/VerifyEmail";
 
-const MainNavigation = () => {
+const Header = () => {
   const dispatch = useDispatch();
 
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
@@ -22,7 +22,7 @@ const MainNavigation = () => {
         <ul>
           {!isLoggedIn && (
             <li>
-              <Link to="/auth">Login</Link>
+              <Link to="/">Login</Link>
             </li>
           )}
           {isLoggedIn && (
@@ -30,11 +30,7 @@ const MainNavigation = () => {
               <Link to="/">Home</Link>
             </li>
           )}
-          {isLoggedIn && (
-            <li>
-              <Link to="/inbox">Inbox</Link>
-            </li>
-          )}
+          
           {isLoggedIn && (
             <li>
               <button onClick={logoutHandler}>Logout</button>
@@ -47,4 +43,4 @@ const MainNavigation = () => {
   );
 };
 
-export default MainNavigation;
+export default Header;
