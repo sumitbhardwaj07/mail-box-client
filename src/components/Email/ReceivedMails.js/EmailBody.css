@@ -35,9 +35,9 @@
     flex: 10%;
 }
 .emailbody__delete-btn {
-    padding: 4px 8px;
+    padding: 1px 2px;
     margin-left: 10px;
-    background-color: #ff4d4d;
+    background-color: #f86161;
     color: white;
     border: none;
     border-radius: 4px;
@@ -45,7 +45,7 @@
 }
 
 .emailbody__delete-btn:hover {
-    background-color: #ff3333;
+    background-color: #f69999;
 }
 .blue-dot {
     width: 10px;

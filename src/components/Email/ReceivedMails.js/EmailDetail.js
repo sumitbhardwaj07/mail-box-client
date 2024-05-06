@@ -7,9 +7,10 @@ const EmailDetail = () => {
 
   const email = useSelector(state => state.auth.email);
   const location = useLocation();
-  const {to, subject, body, time, id} = location.state;
+  const { to, subject, body, time, id, isRead } = location.state;
+ 
 
-
+console.log(isRead);
   console.log(location.state);
 
   const dummyEmail = email
@@ -18,7 +19,7 @@ const EmailDetail = () => {
       .filter((e) => e.charCodeAt(0) >= 97 && e.charCodeAt(0) <= 122)
       .join("");
 
-  useEffect(() => {
+  
    
     const updateIsReadStatus = async () => {
       try {
@@ -33,15 +34,17 @@ const EmailDetail = () => {
         if (!response.ok) {
           throw new Error("Failed to update isRead status");
         }
-
-     
+        
       } catch (error) {
         console.error("Error updating isRead status:", error);
       }
     };
-
-    updateIsReadStatus();
-  }, [id]); 
+ 
+    useEffect(() => {
+      if (isRead !== undefined) {
+        updateIsReadStatus();
+      }
+    },[isRead,id]);
 
   return (
     <div className="emailContainer">

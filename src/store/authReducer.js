@@ -8,11 +8,7 @@ const initialAuthState = localStorage.getItem("authState")
       userId: null,
       isLoggedIn: false,
       showForgotPasswordModal: false,
-      // userData: {
-      //   name: '',
-      //   email: '',
-      //   photoUrl: '',
-      // },
+      
     };
 
 const authSlice = createSlice({

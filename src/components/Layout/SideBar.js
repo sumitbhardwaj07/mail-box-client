@@ -1,9 +1,16 @@
 import { useNavigate } from 'react-router-dom';
 import './SideBar.css'
+import { useSelector } from 'react-redux';
+
+
 
 const SideBar = () =>{
 
     const navigate = useNavigate();
+
+    const count = useSelector(state => state.mail.count);
+    
+
 
     const handleCompose = () => {
         navigate("/compose")
@@ -18,6 +25,10 @@ const SideBar = () =>{
       const allMailHandler = () => {
         navigate('/allmails');
       }
+
+      
+    
+   
     return (
         <div className="sidebar">
             <button className="compose__btn" onClick={handleCompose}>
@@ -25,15 +36,15 @@ const SideBar = () =>{
             </button>
             <div className="sidebarOptions">
                 <h4 onClick={inboxHandler}>Inbox</h4>
-                <p>num</p>
+                <p>{count}</p>
             </div>
             <div className="sidebarOptions">
                 <h4 onClick={sentHandler}>Sent</h4>
-                <p>num</p>            
+                <p></p>            
             </div>
             <div className="sidebarOptions">
                 <h4 onClick={allMailHandler}>All mails</h4>
-                <p>num</p>
+                <p></p>
             </div>
         </div>
     )

@@ -12,8 +12,10 @@ import Compose from "./components/Email/Compose";
 import AllMails from "./components/Inbox/AllMails";
 import EmailDetail from "./components/Email/ReceivedMails.js/EmailDetail";
 
+
 function App() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  
 
   return (
     <div className="App">

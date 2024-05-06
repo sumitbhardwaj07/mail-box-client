@@ -3,7 +3,7 @@ import EmailBody from './ReceivedMails.js/EmailBody';
 import { useNavigate } from 'react-router-dom';
 
 
-const EmailList = ({ emails, deleteHandler }) => {
+const EmailList = ({ emails, deleteHandler, count }) => {
     const navigate = useNavigate();
 
   const handleEmailClick = (email) => {

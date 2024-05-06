@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState, convertToRaw } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./Compose.css";
 import { useNavigate } from "react-router-dom";
 
@@ -11,6 +11,7 @@ const Compose = () => {
   const [subject, setSubject] = useState("");
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
 
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
@@ -77,6 +78,9 @@ const Compose = () => {
       setLoading(false);
     }
   };
+
+
+  
 
   const sendMailTo = async () => {
 
