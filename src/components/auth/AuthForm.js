@@ -70,6 +70,7 @@ const AuthForm = () => {
       }
   
       const data = await response.json();
+      console.log(data.email);
       alert("Login successful");
       dispatch(login({ token: data.idToken, userId: data.localId, email: data.email }));
     } catch (error) {

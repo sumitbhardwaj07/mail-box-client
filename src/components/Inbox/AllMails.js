@@ -23,8 +23,14 @@ const AllMails = () => {
       if (response1.ok && response2.ok) {
         const data1 = await response1.json();
         const data2 = await response2.json();
-        const inboxEmails = Object.values(data1 || {});
-        const sentEmails = Object.values(data2 || {});
+        const inboxEmails = Object.entries(data1).map(([key, value]) => ({
+          id: key,
+          ...value,
+        }));
+        const sentEmails = Object.entries(data2).map(([key, value]) => ({
+          id: key,
+          ...value,
+        }));
 
         // Combining emails and filtering duplicates
         const combinedEmails = [...inboxEmails, ...sentEmails];
