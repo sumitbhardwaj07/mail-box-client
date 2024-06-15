@@ -31,7 +31,7 @@ const AllMails = () => {
         ...value,
       }));
 
-      // Combining emails and filtering duplicates
+      
       const combinedEmails = [...inboxEmails, ...sentEmails];
       const uniqueEmails = combinedEmails.reduce((acc, current) => {
         const uniqueKey = `${current.from}-${current.subject}-${current.timestamp}`; // Composite key
@@ -47,6 +47,9 @@ const AllMails = () => {
       }, []);
 
       setEmails(uniqueEmails);
+    }
+    else {
+      alert('Failed to fetch data.Please try again')
     }
   };
   useEffect(() => {
@@ -79,7 +82,7 @@ const AllMails = () => {
       throw new Error("Failed to delete the email");
     }
     fetchAllMails();
-    //alert("Email deleted successfully!");
+    
   };
 
   return (

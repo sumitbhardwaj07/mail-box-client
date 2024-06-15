@@ -1,9 +1,7 @@
-// Inbox.js
-import React, { useState, useEffect, useDebugValue } from "react";
+import React, { useState, useEffect } from "react";
 import { setCount } from "../../store/mailReducer";
 import { useDispatch, useSelector } from "react-redux";
 import EmailList from "../Email/EmailList";
-import { set } from "firebase/database";
 
 const Inbox = () => {
   const [emails, setEmails] = useState([]);
@@ -28,6 +26,9 @@ const Inbox = () => {
         ...value,
       }));
       setEmails(emailsArray);
+    }
+    else {
+      alert('Failed to fetch data.Please try again ')
     }
   };
   useEffect(() => {
@@ -77,4 +78,3 @@ const Inbox = () => {
 };
 
 export default Inbox;
-

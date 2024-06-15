@@ -8,10 +8,6 @@ const EmailDetail = () => {
   const email = useSelector(state => state.auth.email);
   const location = useLocation();
   const { to, subject, body, time, id, isRead } = location.state;
- 
-
-console.log(isRead);
-  console.log(location.state);
 
   const dummyEmail = email
       .toLowerCase()

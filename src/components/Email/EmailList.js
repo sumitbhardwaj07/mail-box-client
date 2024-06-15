@@ -3,12 +3,11 @@ import EmailBody from './ReceivedMails.js/EmailBody';
 import { useNavigate } from 'react-router-dom';
 
 
-const EmailList = ({ emails, deleteHandler, count }) => {
-    const navigate = useNavigate();
+const EmailList = ({ emails, deleteHandler }) => {
+  const navigate = useNavigate();
 
   const handleEmailClick = (email) => {
-    navigate('/emaildetail', { state: email})
-    console.log(email);
+    navigate('/emaildetail', { state: email});
   };
 
   
@@ -29,14 +28,6 @@ const EmailList = ({ emails, deleteHandler, count }) => {
         />
       ))}
 
-      {/* {selectedEmail && (
-        <EmailDetail
-          name={selectedEmail.name}
-          subject={selectedEmail.subject}
-          time={selectedEmail.time}
-          body={selectedEmail.body}
-        />
-      )} */}
     </div>
   );
 };

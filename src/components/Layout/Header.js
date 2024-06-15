@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../store/authReducer";
 import classes from "./Header.module.css";
-//import VerifyEmailButton from "../Auth/VerifyEmail";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -16,7 +15,7 @@ const Header = () => {
   return (
     <header className={classes.header}>
       <Link to="/">
-        <div className={classes.logo}>React Auth</div>
+        <div className={classes.logo}>@E-mail</div>
       </Link>
       <nav>
         <ul>
@@ -36,7 +35,7 @@ const Header = () => {
               <button onClick={logoutHandler}>Logout</button>
             </li>
           )}
-          {/* {isLoggedIn && <VerifyEmailButton />} */}
+          
         </ul>
       </nav>
     </header>

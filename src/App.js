@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { useSelector } from "react-redux";
-import AuthPage from "./pages/AuthPage";
+import AuthPage from "./components/pages/AuthPage";
 
 import Inbox from "./components/Inbox/Inbox";
 import Sent from "./components/Inbox/Sent";

@@ -1,12 +1,9 @@
-import { useSelector } from "react-redux";
+
 import "./EmailBody.css";
 
-const EmailBody = ({ to, subject, body, time, onClick, isRead, deleteHandler, count }) => {
+const EmailBody = ({ to, subject, body, time, onClick, isRead, deleteHandler }) => {
 
-    const email = useSelector(state => state.auth.email);
-
-    
-    
+  
   return (
     <div className={`emailbody `} onClick={onClick}>
       {isRead!==undefined && !isRead && <div className="blue-dot"></div>}
@@ -26,7 +23,7 @@ const EmailBody = ({ to, subject, body, time, onClick, isRead, deleteHandler, co
         <p>{time}</p>
         <button className="emailbody__delete-btn" onClick={deleteHandler}>
           Delete
-        </button>
+        </button> 
       </div>
     </div>
   );

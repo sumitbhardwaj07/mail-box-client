@@ -1,4 +1,4 @@
-// Sent.js
+
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import EmailList from "../Email/EmailList";
@@ -18,7 +18,6 @@ const Sent = () => {
     );
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
       const emailsArray = Object.entries(data).map(([key, value]) => ({
         id: key,
         ...value,

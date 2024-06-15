@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Button } from "react-bootstrap";
 import { hideForgotPassword } from "../../store/authReducer";
-import Modal from "../UI/Modal";
+import Modal from "../../UI/Modal";
 import styles from "./ForgotPassword.module.css";
 import { useDispatch } from "react-redux";
 

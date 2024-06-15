@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState, convertToRaw } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import "./Compose.css";
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const Compose = () => {
   const [subject, setSubject] = useState("");
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [loading, setLoading] = useState(false);
-  const dispatch = useDispatch();
+  
 
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
@@ -33,7 +33,7 @@ const Compose = () => {
     const minutes = currentTime.getMinutes().toString().padStart(2, "0");
     const formattedTime = `${hours}:${minutes}`;
 
-    console.log(formattedTime);
+
     const msgObj = {
       to: to,
       from: emailId,
@@ -68,10 +68,8 @@ const Compose = () => {
       }
 
       const data = await response.json(); 
-      console.log(data);
-      alert("Mail sent successfully!");
       
-
+      
     } catch (error) {
       alert(error.message);
     } finally {
@@ -123,10 +121,10 @@ const Compose = () => {
       }
 
       const data = await response.json(); 
-      console.log(data);
-      alert("Mail sent successfully!");
       
-
+      alert("Mail sent successfully!");
+      handleClose();
+      
     } catch (error) {
       alert(error.message);
     } finally {

@@ -14,7 +14,7 @@ const AuthForm = () => {
   const showModal = useSelector(state => state.auth.showForgotPasswordModal);
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  //const [enteredConfirmPassword, setEnteredConfirmPassword] = useState("");
+  
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
